@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { movieApi } from '../api/movieApi';
+import { trendMoviesApi } from '../api/moviesApi';
 
 const HomePage = () => {
   const [trandingMovies, setTrandingMovies] = useState([]);
 
   useEffect(() => {
-    movieApi().then(data => {
-      const { results } = data;
-    //   console.log(results);
+    trendMoviesApi().then(data => {
+      const { results } = data;    
       setTrandingMovies(results);
     });
   }, []);

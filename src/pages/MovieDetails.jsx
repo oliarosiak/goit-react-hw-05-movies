@@ -1,6 +1,6 @@
-import axios from 'axios';
+import { getMovieById } from '../api/moviesApi.js';
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -12,14 +12,7 @@ const MovieDetails = () => {
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
-    const movie = async () => {
-      const { data } = await axios.get(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=184232349777783127dd9be9cacf5c3e`
-      );
-      return data;
-    };
-
-    movie().then(data => {
+    getMovieById(movieId).then(data => {
       const {
         title,
         poster_path,
@@ -27,9 +20,7 @@ const MovieDetails = () => {
         genres,
         release_date,
         vote_average,
-      } = data;
-
-      console.log(data);
+      } = data;     
 
       setTitle(title);
       setYear(new Date(release_date).getFullYear());
@@ -65,10 +56,15 @@ const MovieDetails = () => {
       <div>
         <h4>Additional information</h4>
         <ul>
-          <Link to="cast">Cast</Link>
-          <Link to="reviews">Reviews</Link>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
         </ul>
       </div>
+      <Outlet />
     </div>
   );
 };

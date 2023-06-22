@@ -4,6 +4,8 @@ import HomePage from 'pages/HomePage.jsx';
 import MoviePage from 'pages/MoviePage.jsx';
 import MovieDetails from 'pages/MovieDetails.jsx';
 import NotFoundPage from 'pages/NotFoundPage.jsx';
+import Cast from './cast/Cast.jsx';
+import Reviews from './reviews/Reviews.jsx';
 
 
 const App = () => {
@@ -24,8 +26,8 @@ const App = () => {
         <Route path='/' element={<HomePage />} />
         <Route path='/movies' element={<MoviePage />} />
         <Route path='/movies/:movieId' element={<MovieDetails />}>
-          <Route path='cast' />
-          <Route path='reviews' />
+          <Route path='cast' element={<Cast />} />
+          <Route path='reviews' element={<Reviews/>} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
