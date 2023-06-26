@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { trendMoviesApi } from '../api/moviesApi';
-import TrandMoviesList from '../components/trandMoviesList/TrandMoviesList';
+import MoviesList from 'components/movieList/MoviesList';
 
 const HomePage = () => {
   const [trandingMovies, setTrandingMovies] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     trendMoviesApi().then(data => {
@@ -16,7 +17,7 @@ const HomePage = () => {
   return (
     <div>
       <h1>Trending today</h1>
-      <TrandMoviesList movies={trandingMovies} />
+      <MoviesList movies={trandingMovies} location={location} />
       <Outlet />
     </div>
   );

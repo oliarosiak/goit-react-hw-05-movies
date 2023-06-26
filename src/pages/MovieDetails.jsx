@@ -1,6 +1,9 @@
 import { getMovieById } from '../api/moviesApi.js';
 import { useState, useEffect, useRef } from 'react';
-import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
+import MovieMainInfo from 'components/movieMainInfo/MovieMainInfo.jsx';
+import MovieAdditionalInfo from 'components/movieAdditionalInfo/MovieAdditionalInfo.jsx';
+import BackLink from 'components/backLink/BackLink.jsx';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -31,47 +34,20 @@ const MovieDetails = () => {
       setGenres(genres);
       setScore(Math.round(vote_average * 10));
     });
-  }, [movieId]);
-
-  console.log(location);
-  console.log(backLinkLocationRef);
-
-  //to={location?.state?.from?.path ?? '/'}
+  }, [movieId]); 
 
   return (
     <div>
-      <Link to={backLinkLocationRef.current}>Go back</Link>
-      <div style={{ display: 'flex' }}>
-        <img
-          src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster}`}
-          alt={title}
-        />
-        <div>
-          <h3>
-            {title} ({year})
-          </h3>
-          <p>Use score: {score}%</p>
-          <h4>Overview</h4>
-          <p>{overview}</p>
-          <h4>Genres</h4>
-          <p>
-            {genres.map(({ name }) => (
-              <span key={name}>{name}</span>
-            ))}
-          </p>
-        </div>
-      </div>
-      <div>
-        <h4>Additional information</h4>
-        <ul>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-        </ul>
-      </div>
+      <BackLink linkLocation={backLinkLocationRef.current} />
+      <MovieMainInfo
+        poster={poster}
+        title={title}
+        year={Number(year)}
+        score={Number(score)}
+        overview={overview}
+        genres={genres}
+      />
+      <MovieAdditionalInfo />
       <Outlet />
     </div>
   );

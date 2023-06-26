@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { searchMovies } from '../api/moviesApi.js';
 import { useSearchParams, useLocation } from 'react-router-dom';
-import SearchMoviesList from 'components/searchMovieList/SearchMoviesList.jsx';
-import SearchMovieForm from 'components/searchMovieForm/SearchMovieForm.jsx';
+import MovieForm from 'components/searchMovieForm/MovieForm.jsx';
+import MoviesList from 'components/movieList/MoviesList.jsx';
 
 const MoviePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -10,7 +10,7 @@ const MoviePage = () => {
   const [findingMovies, setFindingMovies] = useState([]);
   const location = useLocation();
 
-  const formHandler = event => {    
+  const formHandler = event => {
     event.preventDefault();
     const form = event.currentTarget;
     const query = form.query.value;
@@ -37,8 +37,8 @@ const MoviePage = () => {
 
   return (
     <div>
-      <SearchMovieForm onSubmit={formHandler} />  
-      <SearchMoviesList movies={findingMovies} location={location} />
+      <MovieForm onSubmit={formHandler} />
+      <MoviesList movies={findingMovies} location={location} />
     </div>
   );
 };
