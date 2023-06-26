@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { ListContainer, StyledLink } from './MoviesList.styled';
 
 const MoviesList = ({ movies, location }) => (
-  <ul>
+  <ListContainer>
     {movies.map(({ id, title }) => (
-      <Link key={id} to={`/movies/${id}`} state={{ from: location }}>
+      <StyledLink key={id} to={`/movies/${id}`} state={{ from: location }}>
         {title}
-      </Link>
+      </StyledLink>
     ))}
-  </ul>
+  </ListContainer>
 );
 
 MoviesList.propTypes = {

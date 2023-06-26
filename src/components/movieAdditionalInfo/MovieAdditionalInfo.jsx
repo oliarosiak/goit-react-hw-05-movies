@@ -1,17 +1,23 @@
-import { Link } from 'react-router-dom';
+import {
+  AdditionalContainer,
+  AdditionalTitle,
+  AdditionalList,
+  AdditionalItem,
+  AdditionalLink
+} from './MovieAdditionalInfo.styled';
 
 const MovieAdditionalInfo = () => (
-  <div>
-    <h4>Additional information</h4>
-    <ul>
-      <li>
-        <Link to="cast">Cast</Link>
-      </li>
-      <li>
-        <Link to="reviews">Reviews</Link>
-      </li>
-    </ul>
-  </div>
+  <AdditionalContainer>
+    <AdditionalTitle>Additional information</AdditionalTitle>
+    <AdditionalList>
+      <AdditionalItem>
+        <AdditionalLink to="cast">Cast</AdditionalLink>
+      </AdditionalItem>
+      <AdditionalItem>
+        <AdditionalLink to="reviews">Reviews</AdditionalLink>
+      </AdditionalItem>
+    </AdditionalList>
+  </AdditionalContainer>
 );
 
 export default MovieAdditionalInfo;

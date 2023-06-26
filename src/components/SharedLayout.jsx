@@ -15,14 +15,10 @@ const SharedLayout = () => {
       <NavContainer>
         <NavList>
           <NavItem>
-            <StyledLink to="/">
-              <div>Home</div>
-            </StyledLink>
+            <StyledLink to="/">Home</StyledLink>
           </NavItem>
           <NavItem>
-            <StyledLink to="/movies">
-              <div>Movies</div>
-            </StyledLink>
+            <StyledLink to="/movies">Movies</StyledLink>
           </NavItem>
         </NavList>
       </NavContainer>

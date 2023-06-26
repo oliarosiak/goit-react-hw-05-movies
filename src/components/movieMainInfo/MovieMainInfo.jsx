@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { InfoContainer, InfoBlock, InfoTitle, InfoSubtitle, InfoText, InfoSubtext } from './MovieMainInfo.styled';
 
 const MovieInformation = ({ poster, title, year, score, overview, genres }) => {
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
@@ -8,23 +9,23 @@ const MovieInformation = ({ poster, title, year, score, overview, genres }) => {
       : `${IMAGE_BASE_URL}${poster}`; 
   
   return (
-    <div style={{ display: 'flex' }}>
-      <img src={imageUrl} alt={title} width={150} />
-      <div>
-        <h3>
+    <InfoContainer>
+      <img src={imageUrl} alt={title} width={250} />
+      <InfoBlock>
+        <InfoTitle>
           {title} ({year})
-        </h3>
-        <p>Use score: {score}%</p>
-        <h4>Overview</h4>
-        <p>{overview}</p>
-        <h4>Genres</h4>
-        <p>
+        </InfoTitle>
+        <InfoText>Use score: {score}%</InfoText>
+        <InfoSubtitle>Overview</InfoSubtitle>
+        <InfoText>{overview}</InfoText>
+        <InfoSubtitle>Genres</InfoSubtitle>
+        <InfoText>
           {genres.map(({ name }) => (
-            <span key={name}>{name}</span>
+            <InfoSubtext key={name}>{name}</InfoSubtext>
           ))}
-        </p>
-      </div>
-    </div>
+        </InfoText>
+      </InfoBlock>
+    </InfoContainer>
   );
 };
 

@@ -5,7 +5,7 @@ const SharedLayout = lazy(() => import('./SharedLayout.jsx'));
 const HomePage = lazy(() => import('pages/HomePage.jsx'));
 const MoviePage = lazy(() => import('pages/MoviePage.jsx'));
 const MovieDetails = lazy(() => import('pages/MovieDetails.jsx'));
-const NotFoundPage = lazy(() => import('pages/NotFoundPage.jsx'));
+const NotFoundPage = lazy(() => import('./notFoundPage/NotFoundPage.jsx'));
 const Cast = lazy(() => import('./cast/Cast.jsx'));
 const Reviews = lazy(() => import('./reviews/Reviews.jsx'));
 

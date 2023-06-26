@@ -34,7 +34,7 @@ const MoviePage = () => {
       const { results } = data;
       setFindingMovies(results);
     });
-  }, [userInput]);
+  }, [userInput]); 
 
   return (
     <div>

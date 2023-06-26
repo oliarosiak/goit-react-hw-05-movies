@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
+import { Form, Input, Button } from './MovieForm.styled';
 
 const MovieForm = ({ onSubmit }) => (
-  <form onSubmit={onSubmit}>
-    <button type="submit">search</button>
-    <input
+  <Form onSubmit={onSubmit}>    
+    <Input
       name="query"
       type="text"
       autoComplete="off"
       autoFocus
       placeholder="Enter movie name"
     />
-  </form>
+    <Button type="submit">search</Button>
+  </Form>
 );
 
 MovieForm.propTypes = {

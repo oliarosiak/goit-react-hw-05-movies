@@ -36,7 +36,7 @@ const MovieDetails = () => {
       setScore(Math.round(vote_average * 10));
     });
   }, [movieId]);
-
+ 
   return (
     <div>
       <BackLink linkLocation={backLinkLocationRef.current} />

@@ -4,6 +4,12 @@ import { trendMoviesApi } from '../api/moviesApi';
 import MoviesList from 'components/movieList/MoviesList';
 import Loader from 'components/loader/Loader.jsx';
 
+const mainHeader = {
+  textTransform: 'uppercase',
+  textShadow: '2px 2px 4px var(--shadow-color)',
+  color: 'var(--main-text-color)',
+};
+
 const HomePage = () => {
   const [trandingMovies, setTrandingMovies] = useState([]);
   const location = useLocation();
@@ -17,7 +23,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Trending today</h1>  
+      <h1 style={mainHeader}>Trending today</h1>
       <MoviesList movies={trandingMovies} location={location} />
 
       <Suspense fallback={<Loader />}>

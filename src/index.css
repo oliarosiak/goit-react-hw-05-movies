@@ -1,4 +1,11 @@
 @import-normalize; /* bring in normalize.css styles */
+:root {
+  --main-text-color: #f1f1f1;
+  --second-text-color: #c8c9cd;
+  --shadow-color: #c8c9cd;
+  --border-color: #b1e6ff;
+  --active-color: #08bcdc;
+}
 
 body {
   margin: 0;
@@ -8,6 +15,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+
+  background: #141e30;
+  background: -webkit-linear-gradient(to right, #243b55, #141e30);
+  background: linear-gradient(to right, #243b55, #141e30);
 }
 
 code {
@@ -16,8 +27,7 @@ code {
 }
 
 img {
-  display: block;
-  height: auto;
+  display: block;  
   max-width: 100%;
 }
 
