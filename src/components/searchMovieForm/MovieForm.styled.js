@@ -8,11 +8,24 @@ export const Form = styled.form`
 export const Input = styled.input`
   width: 400px;
   margin-right: 8px;
-  padding: 8px 16px;
+  padding: 4px 12px;
   font-size: 20px;
+  outline: none;
+  border: 4px solid var(--border-color);
+  &:hover,
+  &:focus,
+  &:active {
+    border: 4px solid var(--active-color);
+  }
 `;
 
 export const Button = styled.button`
-  padding: 8px 16px;
+  padding: 4px 12px;
   font-size: 20px;
+  border: 4px solid var(--border-color);
+  &:hover,
+  &:focus,
+  &:active {
+    border: 4px solid var(--active-color);
+  }
 `;
