@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+import { Outlet, useSearchParams, useLocation } from 'react-router-dom';
 import { searchMovies } from '../api/moviesApi.js';
-import { useSearchParams, useLocation } from 'react-router-dom';
 import MovieForm from 'components/searchMovieForm/MovieForm.jsx';
 import MoviesList from 'components/movieList/MoviesList.jsx';
+import Loader from 'components/loader/Loader.jsx';
 
 const MoviePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,6 +40,10 @@ const MoviePage = () => {
     <div>
       <MovieForm onSubmit={formHandler} />
       <MoviesList movies={findingMovies} location={location} />
+
+      <Suspense fallback={<Loader />} >
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

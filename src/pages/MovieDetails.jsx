@@ -1,9 +1,10 @@
-import { getMovieById } from '../api/moviesApi.js';
-import { useState, useEffect, useRef } from 'react';
+import { Suspense, useState, useEffect, useRef } from 'react';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
+import { getMovieById } from '../api/moviesApi.js';
 import MovieMainInfo from 'components/movieMainInfo/MovieMainInfo.jsx';
 import MovieAdditionalInfo from 'components/movieAdditionalInfo/MovieAdditionalInfo.jsx';
 import BackLink from 'components/backLink/BackLink.jsx';
+import Loader from 'components/loader/Loader.jsx';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -34,7 +35,7 @@ const MovieDetails = () => {
       setGenres(genres);
       setScore(Math.round(vote_average * 10));
     });
-  }, [movieId]); 
+  }, [movieId]);
 
   return (
     <div>
@@ -48,7 +49,10 @@ const MovieDetails = () => {
         genres={genres}
       />
       <MovieAdditionalInfo />
-      <Outlet />
+
+      <Suspense fallback={<Loader />} >
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
