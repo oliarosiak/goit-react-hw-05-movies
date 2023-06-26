@@ -7,7 +7,6 @@ const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isEmpty, setIsEmpty] = useState(false);
-  console.log(movieId);
 
   useEffect(() => {
     getReviewsById(movieId).then(data => {
@@ -16,7 +15,7 @@ const Reviews = () => {
       if (results.length === 0) {
         return setIsEmpty(true);
       }
-      console.log(results);
+      
       setReviews(results);
     });
   }, [movieId]);

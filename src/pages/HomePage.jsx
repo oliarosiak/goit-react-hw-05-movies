@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { trendMoviesApi } from '../api/moviesApi';
+import TrandMoviesList from '../components/trandMoviesList/TrandMoviesList';
 
 const HomePage = () => {
   const [trandingMovies, setTrandingMovies] = useState([]);
@@ -15,14 +16,7 @@ const HomePage = () => {
   return (
     <div>
       <h1>Trending today</h1>
-      <ul>
-        {trandingMovies.map(({ id, title }) => (
-          <Link key={id} to={`/movies/${id}`}>
-            {title}
-          </Link>
-        ))}
-      </ul>
-
+      <TrandMoviesList movies={trandingMovies} />
       <Outlet />
     </div>
   );

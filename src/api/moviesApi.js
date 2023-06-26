@@ -58,12 +58,9 @@ export async function searchMovies(query) {
     const { data } = await axios.get(
       `${BASE_URL}/search/movie?query=${query}&include_adult=false&api_key=${API_KEY}`
     );
-    console.log(data);
     return data;
   } catch (error) {
     console.error(error);
     return [];
   }
 }
-
-//https://api.themoviedb.org/3/search/movie?query=avatar&include_adult=false&language=en-US&page=1'

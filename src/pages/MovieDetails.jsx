@@ -1,6 +1,6 @@
 import { getMovieById } from '../api/moviesApi.js';
-import { useState, useEffect } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -10,6 +10,8 @@ const MovieDetails = () => {
   const [score, setScore] = useState('');
   const [overview, setOverview] = useState('');
   const [genres, setGenres] = useState([]);
+  const location = useLocation();
+  const backLinkLocationRef = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     getMovieById(movieId).then(data => {
@@ -20,7 +22,7 @@ const MovieDetails = () => {
         genres,
         release_date,
         vote_average,
-      } = data;     
+      } = data;
 
       setTitle(title);
       setYear(new Date(release_date).getFullYear());
@@ -31,8 +33,14 @@ const MovieDetails = () => {
     });
   }, [movieId]);
 
+  console.log(location);
+  console.log(backLinkLocationRef);
+
+  //to={location?.state?.from?.path ?? '/'}
+
   return (
     <div>
+      <Link to={backLinkLocationRef.current}>Go back</Link>
       <div style={{ display: 'flex' }}>
         <img
           src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${poster}`}
