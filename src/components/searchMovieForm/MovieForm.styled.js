@@ -11,6 +11,7 @@ export const Input = styled.input`
   padding: 4px 12px;
   font-size: 20px;
   outline: none;
+  border-radius: 10px;
   border: 4px solid var(--border-color);
   color: var(--accent-color);
   &:hover,
@@ -27,6 +28,7 @@ export const Button = styled.button`
   padding: 4px 12px;
   font-size: 20px;
   color: var(--accent-color);
+  border-radius: 10px;
   border: 4px solid var(--border-color);
   &:hover,
   &:focus,

@@ -14,5 +14,11 @@ export const BackLinkBtn = styled(NavLink)`
   font-weight: 700;
   color: var(--main-text-color);
   background-color: var(--active-color);
+  border-radius: 10px;
   border: 2px solid var(--border-color);
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    border: 2px solid var(--active-color);
+  }
 `;
