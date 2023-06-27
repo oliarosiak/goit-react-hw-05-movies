@@ -8,6 +8,7 @@ export const AdditionalContainer = styled.div`
 
 export const AdditionalTitle = styled.h3`
   margin-bottom: 12px;
+  text-decoration: underline;
 `;
 
 export const AdditionalList = styled.ul`
@@ -21,5 +22,9 @@ export const AdditionalItem = styled.li`
 `;
 
 export const AdditionalLink = styled(NavLink)`
-  color: var(--second-text-color)
+  color: var(--second-text-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 `;

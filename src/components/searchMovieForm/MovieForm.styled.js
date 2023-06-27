@@ -12,20 +12,26 @@ export const Input = styled.input`
   font-size: 20px;
   outline: none;
   border: 4px solid var(--border-color);
+  color: var(--accent-color);
   &:hover,
   &:focus,
   &:active {
     border: 4px solid var(--active-color);
+  }
+  &::placeholder {
+    color: var(--second-text-color);
   }
 `;
 
 export const Button = styled.button`
   padding: 4px 12px;
   font-size: 20px;
+  color: var(--accent-color);
   border: 4px solid var(--border-color);
   &:hover,
   &:focus,
   &:active {
+    color: var(--active-color);
     border: 4px solid var(--active-color);
   }
 `;

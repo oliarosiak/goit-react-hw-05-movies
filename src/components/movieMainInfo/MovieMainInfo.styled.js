@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const InfoContainer = styled.div`
-  display: flex;  
+  display: flex;
   padding: 8px 20px;
   border-bottom: 2px solid var(--border-color);
 `;
@@ -12,12 +12,14 @@ export const InfoBlock = styled.div`
 `;
 
 export const InfoTitle = styled.h2`
-font-size: 30px;
+  font-size: 30px;
   margin-bottom: 16px;
+  color: var(--active-color);
 `;
 
 export const InfoSubtitle = styled.h3`
   margin-bottom: 12px;
+  text-decoration: underline;
 `;
 
 export const InfoText = styled.p`
@@ -26,8 +28,8 @@ export const InfoText = styled.p`
 `;
 
 export const InfoSubtext = styled.span`
-display: inline-block;
-&:not(:last-child) {
+  display: inline-block;
+  &:not(:last-child) {
     margin-right: 8px;
   }
-`
+`;

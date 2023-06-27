@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Container = styled.div` 
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -20,6 +20,7 @@ export const NavContainer = styled.nav`
 
 export const NavList = styled.ul`
   display: flex;
+  align-items: baseline;
 `;
 
 export const NavItem = styled.li`
@@ -29,11 +30,17 @@ export const NavItem = styled.li`
   }
 `;
 
-export const StyledLink = styled(NavLink)` 
+export const StyledLink = styled(NavLink)`
   color: inherit;
   font-size: 30px;
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 
   &.active {
+    font-size: 35px;
+    font-weight: 700;
     color: var(--active-color);
     text-decoration: underline;
   }

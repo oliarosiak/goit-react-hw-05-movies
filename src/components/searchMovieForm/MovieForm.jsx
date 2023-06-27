@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Form, Input, Button } from './MovieForm.styled';
 
 const MovieForm = ({ onSubmit }) => (
-  <Form onSubmit={onSubmit}>    
+  <Form onSubmit={onSubmit}>
     <Input
       name="query"
       type="text"

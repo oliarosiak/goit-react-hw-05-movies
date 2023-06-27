@@ -1,19 +1,27 @@
 import PropTypes from 'prop-types';
-import { InfoContainer, InfoBlock, InfoTitle, InfoSubtitle, InfoText, InfoSubtext } from './MovieMainInfo.styled';
+import { GiFilmProjector } from 'react-icons/gi';
+import {
+  InfoContainer,
+  InfoBlock,
+  InfoTitle,
+  InfoSubtitle,
+  InfoText,
+  InfoSubtext,
+} from './MovieMainInfo.styled';
 
 const MovieInformation = ({ poster, title, year, score, overview, genres }) => {
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
   const imageUrl =
     poster === null
       ? 'https://screench.com/upload/no-poster.jpeg'
-      : `${IMAGE_BASE_URL}${poster}`; 
-  
+      : `${IMAGE_BASE_URL}${poster}`;
+
   return (
     <InfoContainer>
       <img src={imageUrl} alt={title} width={250} />
       <InfoBlock>
         <InfoTitle>
-          {title} ({year})
+          <GiFilmProjector /> {title} ({year})
         </InfoTitle>
         <InfoText>Use score: {score}%</InfoText>
         <InfoSubtitle>Overview</InfoSubtitle>

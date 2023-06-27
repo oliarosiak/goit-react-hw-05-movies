@@ -4,15 +4,15 @@ import styled from 'styled-components';
 export const ListContainer = styled.ul`
   margin-top: 16px;
   padding: 8px 16px;
-
 `;
 
-export const StyledLink = styled(NavLink)` 
+export const StyledLink = styled(NavLink)`
   color: inherit;
   font-size: 20px;
 
-  &.active {
-    color: var(--active-color);
+  &:hover,
+  &:focus {  
+    color: var(--accent-color);
     text-decoration: underline;
   }
 

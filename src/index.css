@@ -5,6 +5,7 @@
   --shadow-color: #c8c9cd;
   --border-color: #b1e6ff;
   --active-color: #08bcdc;
+  --accent-color: #018daa;
 }
 
 body {
@@ -29,6 +30,7 @@ code {
 img {
   display: block;  
   max-width: 100%;
+  
 }
 
 ul,

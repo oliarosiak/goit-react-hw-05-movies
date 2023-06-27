@@ -1,9 +1,10 @@
+import { MdRecentActors, MdOutlineReviews } from 'react-icons/md';
 import {
   AdditionalContainer,
   AdditionalTitle,
   AdditionalList,
   AdditionalItem,
-  AdditionalLink
+  AdditionalLink,
 } from './MovieAdditionalInfo.styled';
 
 const MovieAdditionalInfo = () => (
@@ -11,10 +12,10 @@ const MovieAdditionalInfo = () => (
     <AdditionalTitle>Additional information</AdditionalTitle>
     <AdditionalList>
       <AdditionalItem>
-        <AdditionalLink to="cast">Cast</AdditionalLink>
+        <AdditionalLink to="cast"><MdRecentActors /> Cast</AdditionalLink>
       </AdditionalItem>
       <AdditionalItem>
-        <AdditionalLink to="reviews">Reviews</AdditionalLink>
+        <AdditionalLink to="reviews"><MdOutlineReviews/> Reviews</AdditionalLink>
       </AdditionalItem>
     </AdditionalList>
   </AdditionalContainer>
