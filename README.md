@@ -7,9 +7,10 @@ And based on the selected request, a whole list of movies to your taste will be 
 ## The project used:
 
 `«React»`
-`«Javascript»`
-`«Axios»`
 `«React Router Dom»`
+`«Javascript»`
+`«The Movie Database (TMDB)»`
+`«Axios»`
 `«Styled-components / library»`
 `«React Icons / library»`
 `«react-loader-spinner / npm»`
