@@ -12,20 +12,24 @@ import Loader from './loader/Loader.jsx';
 const SharedLayout = () => {
   return (
     <Container>
-      <NavContainer>
-        <NavList>
-          <NavItem>
-            <StyledLink to="/">Home</StyledLink>
-          </NavItem>
-          <NavItem>
-            <StyledLink to="/movies">Movies</StyledLink>
-          </NavItem>
-        </NavList>
-      </NavContainer>
+      <header>
+        <NavContainer>
+          <NavList>
+            <NavItem>
+              <StyledLink to="/">Home</StyledLink>
+            </NavItem>
+            <NavItem>
+              <StyledLink to="/movies">Movies</StyledLink>
+            </NavItem>
+          </NavList>
+        </NavContainer>
+      </header>
 
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </main>      
     </Container>
   );
 };
